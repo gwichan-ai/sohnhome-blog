@@ -6,8 +6,6 @@ description: "AI 사옥의 방마다 무슨 일을 하는지, 평소 쓰는 AI �
 sitemap: true
 ---
 
-> **지금 이 안내를 더 알차게 다시 쓰고 있어요. 며칠 안에 같은 주소에서 새 글로 바뀌어요.**
-
 <style>
 .copybox { position: relative; margin: 1em 0; }
 .copybox button { position: absolute; top: 8px; right: 8px; padding: 4px 10px; border: 1px solid #0f766e; border-radius: 6px; background: #ecfdf5; color: #0f766e; cursor: pointer; font-size: 14px; }
