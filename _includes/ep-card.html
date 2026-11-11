@@ -1,0 +1,9 @@
+<li class="ep-card">
+  <a class="ep-thumb" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+    {%- if post.image -%}<img src="{{ post.image | relative_url }}" alt="" loading="lazy">{%- endif -%}
+  </a>
+  <div class="ep-text">
+    <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+    {%- if post.description -%}<p>{{ post.description | escape }}</p>{%- endif -%}
+  </div>
+</li>

@@ -1,0 +1,51 @@
+---
+# minima 기본 꾸밈 위에 머리·글 목록만 덧씌운다(2026-10-30)
+---
+
+@import "minima";
+
+/* 사이드바(2026-11-09). 메뉴 내용은 _data/nav.yml */
+.nav-toggle { position: absolute; left: -9999px; }
+.top-bar, .nav-backdrop { display: none; }
+.sidebar { position: fixed; left: 0; top: 0; bottom: 0; width: 256px; box-sizing: border-box; padding: 26px 20px; overflow-y: auto; background: #0f1a2b; color: #dfe7f3; font-size: 15px; line-height: 1.5; z-index: 40; }
+.sb-title, .sb-title:visited { display: block; color: #fff; font-size: 18px; font-weight: 700; line-height: 1.35; }
+.sb-title:hover { color: #fff; text-decoration: none; }
+.sb-sub { font-size: 12.5px; color: #8fa3bd; margin: 6px 0 20px; }
+.sidebar h4 { font-size: 12px; letter-spacing: .04em; color: #7f94b0; margin: 20px 0 6px 7px; font-weight: 600; }
+.sb-link, .sb-link:visited { display: flex; justify-content: space-between; color: #c9d6e8; padding: 6px 9px; border-radius: 7px; }
+.sb-link:hover { background: #1a2b44; color: #fff; text-decoration: none; }
+.sb-link.is-here, .sb-link.is-here:visited { background: #1d3350; color: #fff; font-weight: 600; }
+.sb-count { color: #6f86a4; font-size: 12.5px; font-weight: 400; }
+body { padding-left: 256px; }
+
+/* 릴스 보고 온 분 안내 띠 */
+.tower-band { display: block; margin: 18px 0 8px; padding: 12px 16px; border-radius: 10px; background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; }
+.tower-band:hover { text-decoration: none; background: #d1fae5; }
+.tower-band strong { margin-right: 8px; }
+
+/* 글 목록: 작은 카드 */
+.ep-list .ep-card { display: flex; gap: 16px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid #eee; margin: 0; }
+.ep-thumb { flex: 0 0 150px; height: 100px; border-radius: 8px; background: #f3f4f6; overflow: hidden; display: block; }
+.ep-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.ep-text { min-width: 0; }
+.ep-text h3 { font-size: 19px; line-height: 1.4; margin: 0 0 6px; }
+.ep-text .post-link { font-size: inherit; display: inline; }
+.ep-text p { margin: 0; font-size: 15px; color: #555; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+@media (max-width: 860px) {
+  body { padding-left: 0; }
+  .top-bar { display: flex; align-items: center; gap: 12px; position: sticky; top: 0; height: 52px; padding: 0 14px; background: #0f1a2b; z-index: 30; }
+  .nav-btn { color: #fff; font-size: 22px; line-height: 1; cursor: pointer; padding: 6px; }
+  .top-title, .top-title:visited { color: #fff; font-size: 16px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sidebar { width: 78%; max-width: 300px; transform: translateX(-100%); transition: transform .2s; }
+  .nav-toggle:checked ~ .sidebar { transform: none; }
+  .nav-toggle:checked ~ .nav-backdrop { display: block; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 35; }
+}
+
+@media (max-width: 600px) {
+  .page-heading { font-size: 22px; }
+  .ep-list .ep-card { gap: 12px; padding: 12px 0; }
+  .ep-thumb { flex-basis: 96px; height: 72px; }
+  .ep-text h3 { font-size: 16px; }
+  .ep-text p { font-size: 13px; }
+}

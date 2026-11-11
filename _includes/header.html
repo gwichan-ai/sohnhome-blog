@@ -1,0 +1,30 @@
+{%- comment -%}
+minima 머리를 사이드바로 바꾼다(2026-11-09 센터장 "사이드바 만들어서 메뉴처럼"). 메뉴 내용은 _data/nav.yml.
+폰에서는 ☰ 로 여닫는다(자바스크립트 없이 체크박스로).
+{%- endcomment -%}
+<input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="메뉴 열기">
+<header class="top-bar" role="banner">
+  <label for="nav-toggle" class="nav-btn" aria-hidden="true">☰</label>
+  <a class="top-title" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+</header>
+<label for="nav-toggle" class="nav-backdrop" aria-hidden="true"></label>
+<aside class="sidebar">
+  <a class="sb-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+  <p class="sb-sub">AI에게 말로 시켜 집과 회사의 귀찮은 일을 고친 기록</p>
+  <nav>
+    <a class="sb-link{% if page.url == "/" %} is-here{% endif %}" href="{{ "/" | relative_url }}">전체 글<span class="sb-count">{{ site.posts | size }}</span></a>
+    <a class="sb-link{% if page.url == "/about/" %} is-here{% endif %}" href="{{ "/about/" | relative_url }}">소개</a>
+    <h4>주제별 글</h4>
+    {%- for t in site.data.nav.topics -%}
+      {%- assign n = site.posts | where: "topic", t.key | size -%}
+      {%- capture u -%}/topics/{{ t.key }}/{%- endcapture -%}
+      <a class="sb-link{% if page.url == u or page.topic == t.key %} is-here{% endif %}" href="{{ u | relative_url }}">{{ t.title }}<span class="sb-count">{{ n }}</span></a>
+    {%- endfor -%}
+    <h4>AI 사옥 5부작</h4>
+    {%- for t in site.data.nav.tower -%}
+      <a class="sb-link{% if page.url == t.url %} is-here{% endif %}" href="{{ t.url | relative_url }}">{{ t.title }}</a>
+    {%- endfor -%}
+    <h4>구독</h4>
+    <a class="sb-link" href="{{ "/rss.xml" | relative_url }}">RSS</a>
+  </nav>
+</aside>

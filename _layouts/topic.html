@@ -1,0 +1,14 @@
+---
+layout: default
+---
+{%- comment -%}주제별 글 목록(2026-11-09). 화 번호 큰 순서. 어느 글이 어느 주제인지는 글 앞머리 topic.{%- endcomment -%}
+<div class="home">
+  <h1 class="page-heading">{{ page.title }}</h1>
+  {{ content }}
+  {%- assign list = site.posts | where: "topic", page.topic | sort: "ep" | reverse -%}
+  <ul class="post-list ep-list">
+    {%- for post in list -%}
+      {%- include ep-card.html -%}
+    {%- endfor -%}
+  </ul>
+</div>

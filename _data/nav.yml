@@ -1,0 +1,15 @@
+# 사이드바 메뉴(2026-11-09 센터장 "사이드바 만들어서 메뉴처럼"). 이름과 순서는 여기만 고치면 된다.
+# 주제 key 는 글 앞머리 topic 과 topics/<key>.md 파일 이름과 같다.
+topics:
+  - { key: home-life, title: 우리 집 일상 연재 }
+  - { key: smart-home, title: 스마트홈 만들기 }
+  - { key: ask-ai, title: AI에게 일 잘 시키기 }
+  - { key: work-auto, title: 업무 자동화 }
+  - { key: ai-staff, title: AI 직원과 통합뇌 }
+  - { key: vibe-coding, title: 바이브 코딩 }
+tower:
+  - { title: 전체 안내, url: /ai-tower/ }
+  - { title: 방 만드는 법, url: /ai-tower/rooms/ }
+  - { title: 결정 서랍, url: /ai-tower/drawer/ }
+  - { title: 통합뇌, url: /ai-tower/brain/ }
+  - { title: 사옥 짓기 6단계, url: /ai-tower/build/ }
