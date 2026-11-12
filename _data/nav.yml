@@ -12,4 +12,4 @@ tower:
   - { title: 방 만드는 법, url: /ai-tower/rooms/ }
   - { title: 결정 서랍, url: /ai-tower/drawer/ }
   - { title: 통합뇌, url: /ai-tower/brain/ }
-  - { title: 사옥 짓기 6단계, url: /ai-tower/build/ }
+  - { title: 사옥 짓기, url: /ai-tower/build/ }
